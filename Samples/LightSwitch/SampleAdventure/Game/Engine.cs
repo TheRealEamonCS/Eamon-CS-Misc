@@ -3,11 +3,9 @@
 
 // Copyright (c) 2014+ by Michael Penner.  All rights reserved.
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Eamon.Framework;
-using Eamon.Framework.Primitive.Classes;
 using Eamon.Game.Attributes;
 using static SampleAdventure.Game.Plugin.PluginContext;
 
@@ -26,7 +24,7 @@ namespace SampleAdventure.Game
 
 				Debug.Assert(lightSwitchArtifact != null);
 
-				return gGameState != null && gGameState.LightSwitchOn ? ", which is turned on." : ", which is turned off.";
+				return lightSwitchArtifact.Field1 == 1 ? ", which is turned on." : ", which is turned off.";
 			});
 
 			var synonyms = new Dictionary<long, string[]>()

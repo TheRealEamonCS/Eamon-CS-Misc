@@ -70,11 +70,11 @@ namespace SampleAdventure.Game.Plugin
 			}
 		}
 
-		public static Framework.IGameState gGameState
+		public static Eamon.Framework.IGameState gGameState
 		{
 			get
 			{
-				return (Framework.IGameState)EamonRT.Game.Plugin.PluginContext.gGameState;
+				return (Eamon.Framework.IGameState)EamonRT.Game.Plugin.PluginContext.gGameState;
 			}
 		}
 
