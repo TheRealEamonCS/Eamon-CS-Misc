@@ -20,7 +20,7 @@ namespace SampleAdventure.Game
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in Dusty Floor description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@001 token in dusty floor description will be replaced by a string returned from MacroFunc with key == 1
 
 			MacroFuncs.Add(1, () =>
 			{

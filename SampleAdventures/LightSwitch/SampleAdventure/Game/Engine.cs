@@ -18,7 +18,7 @@ namespace SampleAdventure.Game
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in Light Switch description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@001 token in light switch description will be replaced by a string returned from MacroFunc with key == 1
 
 			MacroFuncs.Add(1, () =>
 			{

@@ -18,7 +18,7 @@ namespace SampleAdventure.Game
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in Shotgun Shells description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@001 token in shotgun shells description will be replaced by a string returned from MacroFunc with key == 1
 
 			MacroFuncs.Add(1, () =>
 			{
@@ -26,7 +26,7 @@ namespace SampleAdventure.Game
 
 				Debug.Assert(shotgunShellsArtifact != null);
 
-				return string.Format("{0} shotgun shell{1}", shotgunShellsArtifact.Field1, shotgunShellsArtifact.Field1 != 1 ? "s" : "");
+				return string.Format("{0} shotgun shell{1}", GetStringFromNumber(shotgunShellsArtifact.Field1, false, Globals.Buf02), shotgunShellsArtifact.Field1 != 1 ? "s" : "");
 			});
 
 			var synonyms = new Dictionary<long, string[]>()
