@@ -22,7 +22,7 @@ namespace SampleAdventure.Game.Commands
 
 			if (DobjArtifact.Uid == 1)
 			{
-				gOut.Print("As you slide the manacles onto your wrists, they snap close with a loud clack!  You panic as you realize you have no key to free yourself.  Unfortunately, you die of thirst only a few days later.");
+				gOut.Print("As you slide the manacles onto your wrists, they snap closed with a loud clack!  You panic as you realize you have no key to free yourself.  Unfortunately, you die of thirst only a few days later (despite the damp walls).");
 
 				gGameState.Die = 1;
 
