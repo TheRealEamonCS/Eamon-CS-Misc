@@ -50,7 +50,7 @@ namespace SampleAdventure.Game.Commands
 				}
 				else 
 				{ 
-					gOut.Print("You pump the shotgun, take aim and squeeze the trigger... click!");
+					gOut.Print("You pump the shotgun, take aim and squeeze the trigger... Click!");
 
 					GotoCleanup = true;
 				}
