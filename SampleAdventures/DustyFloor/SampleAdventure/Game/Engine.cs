@@ -28,29 +28,30 @@ namespace SampleAdventure.Game
 
 				Debug.Assert(dustyFloorArtifact != null);
 
-				var room = dustyFloorArtifact.GetInRoom() as Framework.IRoom;
-
-				Debug.Assert(room != null);
-
 				var result = "";
 
-				switch(room.Traversals)
+				var room = dustyFloorArtifact.GetInRoom() as Framework.IRoom;
+
+				if (room != null)
 				{
-					case 0:
-						result = "The dust on the floor is thick and undisturbed.";
-						break;
-					case 1:
-						result = "The dust on the floor shows faint signs of disturbance.";
-						break;
-					case 2:
-						result = "You can make out faint tracks in the dust on the floor.";
-						break;
-					case 3:
-						result = "The dust on the floor shows signs of heavy traffic through the area.";
-						break;
-					default:
-						result = "You can make out clear trails through the dust on the floor, running between the room exits.";
-						break;
+					switch(room.Traversals)
+					{
+						case 0:
+							result = "The dust on the floor is thick and undisturbed.";
+							break;
+						case 1:
+							result = "The dust on the floor shows faint signs of disturbance.";
+							break;
+						case 2:
+							result = "You can make out faint tracks in the dust on the floor.";
+							break;
+						case 3:
+							result = "The dust on the floor shows signs of heavy traffic through the area.";
+							break;
+						default:
+							result = "You can make out clear trails through the dust on the floor, running between the room exits.";
+							break;
+					}
 				}
 
 				return result;
