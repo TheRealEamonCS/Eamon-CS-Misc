@@ -23,13 +23,16 @@ namespace SampleAdventure.Game
 			{
 				base.Location = value;
 
-				var room = value > 0 ? gRDB[value] as Framework.IRoom : null;
-
-				// Schedule next river current event; lambda ensures only one event ever outstanding
-
-				if (Globals.EnableMutateProperties && room != null && room.IsRiverRoom())
+				if (Globals.EnableMutateProperties)
 				{
-					gGameState.BeforePrintPlayerRoomEventHeap.Insert(gGameState.CurrTurn + 5, "SweepArtifactsDownstream", (k, v) => v.EventName == "SweepArtifactsDownstream");
+					var room = value > 0 ? gRDB[value] as Framework.IRoom : null;
+
+					// Schedule next river current event; lambda ensures only one event ever outstanding
+
+					if (room != null && room.IsRiverRoom())
+					{
+						gGameState.BeforePrintPlayerRoomEventHeap.Insert(gGameState.CurrTurn + 5, "SweepArtifactsDownstream", (k, v) => v.EventName == "SweepArtifactsDownstream");
+					}
 				}
 			}
 		}
