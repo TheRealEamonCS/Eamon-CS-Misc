@@ -20,7 +20,7 @@ namespace SampleAdventure.Game
 			{
 				// Computer Center always lit if shaft of light present
 
-				if (Globals.EnableGameOverrides && Uid == 2)
+				if (Globals.EnableMutateProperties && Uid == 2)
 				{
 					var shaftOfLightArtifact = gADB[2];
 

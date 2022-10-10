@@ -27,7 +27,7 @@ namespace SampleAdventure.Game
 
 				// Schedule next river current event; lambda ensures only one event ever outstanding
 
-				if (Globals.EnableGameOverrides && gGameState != null && room != null && room.IsRiverRoom())
+				if (Globals.EnableMutateProperties && room != null && room.IsRiverRoom())
 				{
 					gGameState.BeforePrintPlayerRoomEventHeap.Insert(gGameState.CurrTurn + 5, "SweepArtifactsDownstream", (k, v) => v.EventName == "SweepArtifactsDownstream");
 				}

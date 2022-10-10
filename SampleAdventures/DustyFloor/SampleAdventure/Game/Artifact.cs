@@ -17,7 +17,7 @@ namespace SampleAdventure.Game
 		{
 			get
 			{
-				if (Globals.EnableGameOverrides && gGameState != null && gGameState.Ro > 0 && Uid == 1)
+				if (Globals.EnableMutateProperties && gGameState.Ro > 0 && Uid == 1)
 				{
 					var room = gRDB[gGameState.Ro] as Framework.IRoom;
 

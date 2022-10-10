@@ -18,7 +18,7 @@ namespace SampleAdventure.Game
 			{
 				// Change shaft of light state description if no light source present
 
-				return Globals.EnableGameOverrides && Uid == 2 && IsInRoomUid(2) && gGameState != null && gGameState.Ls <= 0 ? "shimmering in the darkness" : base.StateDesc;
+				return Globals.EnableMutateProperties && Uid == 2 && IsInRoomUid(2) && gGameState.Ls <= 0 ? "shimmering in the darkness" : base.StateDesc;
 			}
 
 			set

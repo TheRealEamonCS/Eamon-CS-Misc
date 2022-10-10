@@ -17,7 +17,7 @@ namespace SampleAdventure.Game
 		{
 			get
 			{
-				if (Globals.EnableGameOverrides)
+				if (Globals.EnableMutateProperties)
 				{
 					Debug.Assert(gCharMonster != null);
 

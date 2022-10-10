@@ -22,7 +22,7 @@ namespace SampleAdventure.Game
 
 			set
 			{
-				if (Globals.EnableGameOverrides && gGameState != null && base.Location > 0 && base.Location != value)
+				if (Globals.EnableMutateProperties && base.Location > 0 && base.Location != value)
 				{
 					var room = gRDB[base.Location] as Framework.IRoom;
 
