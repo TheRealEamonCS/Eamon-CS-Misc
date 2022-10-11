@@ -25,7 +25,7 @@ namespace SampleAdventure.Game.States
 
 			// In the chemical factory
 
-			if (eventType == EventType.BeforePrintCommandPrompt && ShouldPreTurnProcess() && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByCharacter())
+			if (eventType == EventType.BeforePrintCommandPrompt && Globals.ShouldPreTurnProcess && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByCharacter())
 			{
 				Debug.Assert(gCharMonster != null);
 
