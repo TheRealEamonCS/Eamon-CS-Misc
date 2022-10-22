@@ -5,7 +5,7 @@
 
 using Eamon.Game.Attributes;
 using EamonRT.Framework;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {

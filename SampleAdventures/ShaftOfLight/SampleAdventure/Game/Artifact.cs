@@ -5,7 +5,7 @@
 
 using Eamon.Framework;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {
@@ -18,7 +18,7 @@ namespace SampleAdventure.Game
 			{
 				// Change shaft of light state description if no light source present
 
-				return Globals.EnableMutateProperties && Uid == 2 && IsInRoomUid(2) && gGameState.Ls <= 0 ? "shimmering in the darkness" : base.StateDesc;
+				return gEngine.EnableMutateProperties && Uid == 2 && IsInRoomUid(2) && gGameState.Ls <= 0 ? "shimmering in the darkness" : base.StateDesc;
 			}
 
 			set

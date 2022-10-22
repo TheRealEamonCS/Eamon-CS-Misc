@@ -6,7 +6,7 @@
 using System.Diagnostics;
 using Eamon.Game.Attributes;
 using EamonRT.Framework.Commands;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Commands
 {
@@ -21,7 +21,7 @@ namespace SampleAdventure.Game.Commands
 
 			if (DobjArtifact.Uid == 1)
 			{
-				var command = Globals.CreateInstance<IUseCommand>();
+				var command = gEngine.CreateInstance<IUseCommand>();
 
 				CopyCommandData(command);
 
