@@ -8,7 +8,7 @@ using Eamon.Game.Attributes;
 using EamonRT.Framework.Components;
 using EamonRT.Framework.Primitive.Enums;
 using EamonRT.Framework.States;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.States
 {
@@ -25,13 +25,13 @@ namespace SampleAdventure.Game.States
 
 			// In the chemical factory
 
-			if (eventType == EventType.BeforePrintCommandPrompt && ShouldPreTurnProcess() && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByCharacter())
+			if (eventType == EventType.BeforePrintCommandPrompt && gEngine.ShouldPreTurnProcess && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByCharacter())
 			{
 				Debug.Assert(gCharMonster != null);
 
 				gOut.Print("The toxic chemical fumes damage your lungs and make you dizzy!");
 
-				var combatComponent = Globals.CreateInstance<ICombatComponent>(x =>
+				var combatComponent = gEngine.CreateInstance<ICombatComponent>(x =>
 				{
 					x.SetNextStateFunc = s => NextState = s;
 

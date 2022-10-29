@@ -6,7 +6,7 @@
 using System.Diagnostics;
 using Eamon.Framework;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {
@@ -17,7 +17,7 @@ namespace SampleAdventure.Game
 		{
 			get
 			{
-				if (Globals.EnableGameOverrides)
+				if (gEngine.EnableMutateProperties)
 				{
 					Debug.Assert(gCharMonster != null);
 

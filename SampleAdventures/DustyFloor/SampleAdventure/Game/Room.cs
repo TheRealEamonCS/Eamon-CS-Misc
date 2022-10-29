@@ -6,7 +6,7 @@
 using System.Linq;
 using Eamon.Framework;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {

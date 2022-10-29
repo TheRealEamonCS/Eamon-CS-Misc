@@ -8,7 +8,7 @@ using Eamon.Game.Attributes;
 using EamonRT.Framework.Commands;
 using Eamon.Framework.Primitive.Enums;
 using EamonRT.Framework.States;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Commands
 {
@@ -37,7 +37,7 @@ namespace SampleAdventure.Game.Commands
 
 				gOut.Print("You turn the light switch {0}.", DobjArtifact.Field1 == 1 ? "on" : "off");
 
-				NextState = Globals.CreateInstance<IMonsterStartState>();
+				NextState = gEngine.CreateInstance<IMonsterStartState>();
 			}
 			else
 			{
