@@ -5,7 +5,7 @@
 
 using Eamon.Framework;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {
@@ -23,13 +23,16 @@ namespace SampleAdventure.Game
 			{
 				base.Location = value;
 
-				var room = value > 0 ? gRDB[value] as Framework.IRoom : null;
-
-				// Schedule next river current event; lambda ensures only one event ever outstanding
-
-				if (Globals.EnableGameOverrides && gGameState != null && room != null && room.IsRiverRoom())
+				if (gEngine.EnableMutateProperties)
 				{
-					gGameState.BeforePrintPlayerRoomEventHeap.Insert(gGameState.CurrTurn + 5, "SweepArtifactsDownstream", (k, v) => v.EventName == "SweepArtifactsDownstream");
+					var room = value > 0 ? gRDB[value] as Framework.IRoom : null;
+
+					// Schedule next river current event; lambda ensures only one event ever outstanding
+
+					if (room != null && room.IsRiverRoom())
+					{
+						gGameState.BeforePrintPlayerRoomEventHeap.Insert(gGameState.CurrTurn + 5, "SweepArtifactsDownstream", (k, v) => v.EventName == "SweepArtifactsDownstream");
+					}
 				}
 			}
 		}

@@ -6,7 +6,7 @@
 using System.Diagnostics;
 using Eamon.Framework;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {
@@ -22,7 +22,7 @@ namespace SampleAdventure.Game
 
 			set
 			{
-				if (Globals.EnableGameOverrides && gGameState != null && base.Location > 0 && base.Location != value)
+				if (gEngine.EnableMutateProperties && base.Location > 0 && base.Location != value)
 				{
 					var room = gRDB[base.Location] as Framework.IRoom;
 

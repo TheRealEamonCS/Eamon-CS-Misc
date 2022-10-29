@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Eamon.Framework;
 using Eamon.Framework.Primitive.Enums;
 using Eamon.Game.Attributes;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game
 {
@@ -20,7 +20,7 @@ namespace SampleAdventure.Game
 			{
 				// Computer Center always lit if shaft of light present
 
-				if (Globals.EnableGameOverrides && Uid == 2)
+				if (gEngine.EnableMutateProperties && Uid == 2)
 				{
 					var shaftOfLightArtifact = gADB[2];
 

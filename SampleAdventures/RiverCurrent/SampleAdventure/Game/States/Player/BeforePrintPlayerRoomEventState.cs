@@ -11,7 +11,7 @@ using Eamon.Framework.Primitive.Enums;
 using Eamon.Game.Attributes;
 using Eamon.Game.Extensions;
 using EamonRT.Framework.States;
-using static SampleAdventure.Game.Plugin.PluginContext;
+using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.States
 {
@@ -76,26 +76,26 @@ namespace SampleAdventure.Game.States
 
 			if (sweptInArtifactList.Count > 0)
 			{
-				Globals.Buf.SetFormat("The swiftly moving current sweeps ");
+				gEngine.Buf.SetFormat("The swiftly moving current sweeps ");
 
-				gEngine.GetRecordNameList(sweptInArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, Globals.Buf);
+				gEngine.GetRecordNameList(sweptInArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, gEngine.Buf);
 
-				Globals.Buf.AppendFormat(" in from upstream.");
+				gEngine.Buf.AppendFormat(" in from upstream.");
 
-				gOut.Print("{0}", Globals.Buf.ToString());
+				gOut.Print("{0}", gEngine.Buf.ToString());
 			}
 
 			// Print list of Artifacts swept out of player character's Room
 
 			if (sweptOutArtifactList.Count > 0)
 			{
-				Globals.Buf.SetFormat("The swiftly moving current sweeps ");
+				gEngine.Buf.SetFormat("The swiftly moving current sweeps ");
 
-				gEngine.GetRecordNameList(sweptOutArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, Globals.Buf);
+				gEngine.GetRecordNameList(sweptOutArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, gEngine.Buf);
 
-				Globals.Buf.AppendFormat(" downstream.");
+				gEngine.Buf.AppendFormat(" downstream.");
 
-				gOut.Print("{0}", Globals.Buf.ToString());
+				gOut.Print("{0}", gEngine.Buf.ToString());
 			}
 
 			// Schedule next river current event; lambda ensures only one event ever outstanding (swept away Artifact Location change also schedules event)

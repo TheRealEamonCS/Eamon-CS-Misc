@@ -5,4 +5,5 @@ ChangeLog: SampleAdventure
 
 Date            Version            Who            Notes
 ----------------------------------------------------------------------------------------------------------------------------------
-20220814        2.1.0              MP             Code complete 2.1.0
+20221031        2.1.0              MP             Plugin Class Unification overhaul
+20220814                           MP             Code complete 2.1.0
