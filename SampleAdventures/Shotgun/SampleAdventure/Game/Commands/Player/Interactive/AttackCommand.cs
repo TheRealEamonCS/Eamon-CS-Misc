@@ -52,6 +52,8 @@ namespace SampleAdventure.Game.Commands
 				{ 
 					gOut.Print("You pump the shotgun, take aim and squeeze the trigger... Click!");
 
+					gEngine.PauseCombat();
+
 					GotoCleanup = true;
 				}
 			}
