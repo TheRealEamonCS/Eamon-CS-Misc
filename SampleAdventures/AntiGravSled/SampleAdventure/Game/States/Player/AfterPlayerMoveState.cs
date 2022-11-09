@@ -26,7 +26,7 @@ namespace SampleAdventure.Game.States
 
 				// Anti-grav sled follows player around
 
-				if (antiGravSledArtifact.IsInRoomUid(gGameState.R3) && gGameState.AntiGravSledActivated)
+				if (antiGravSledArtifact.IsInRoomUid(gGameState.R3) && gGameState.AntiGravSledActivated && gGameState.Ro != gGameState.R3)
 				{
 					gOut.Print("{0}, sensing your movement, follows behind you dutifully.", antiGravSledArtifact.GetTheName(true));
 
