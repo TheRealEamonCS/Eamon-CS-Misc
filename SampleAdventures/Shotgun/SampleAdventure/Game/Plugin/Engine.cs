@@ -43,7 +43,7 @@ namespace SampleAdventure.Game.Plugin
 
 				Debug.Assert(shotgunShellsArtifact != null);
 
-				return string.Format("{0} shotgun shell{1}", GetStringFromNumber(shotgunShellsArtifact.Field1, false, Buf02), shotgunShellsArtifact.Field1 != 1 ? "s" : "");
+				return string.Format("{0} shotgun shell{1}", GetStringFromNumber(shotgunShellsArtifact.Field1, false, Buf01), shotgunShellsArtifact.Field1 != 1 ? "s" : "");
 			});
 
 			var synonyms = new Dictionary<long, string[]>()
