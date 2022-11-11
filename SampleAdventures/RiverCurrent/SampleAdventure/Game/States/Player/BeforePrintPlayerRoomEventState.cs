@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Eamon.Framework;
+using Eamon.Framework.Args;
 using Eamon.Framework.Primitive.Enums;
 using Eamon.Game.Attributes;
 using Eamon.Game.Extensions;
@@ -72,13 +73,26 @@ namespace SampleAdventure.Game.States
 				}
 			}
 
+			var recordNameListArgs = gEngine.CreateInstance<IRecordNameListArgs>(x =>
+			{
+				x.ArticleType = ArticleType.A;
+
+				x.ShowCharOwned = true;
+
+				x.StateDescCode = StateDescDisplayCode.None;
+
+				x.ShowContents = false;
+
+				x.GroupCountOne = false;
+			});
+
 			// Print list of Artifacts swept into player character's Room
 
 			if (sweptInArtifactList.Count > 0)
 			{
 				gEngine.Buf.SetFormat("The swiftly moving current sweeps ");
 
-				gEngine.GetRecordNameList(sweptInArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, gEngine.Buf);
+				gEngine.GetRecordNameList(sweptInArtifactList.Cast<IGameBase>().ToList(), recordNameListArgs, gEngine.Buf);
 
 				gEngine.Buf.AppendFormat(" in from upstream.");
 
@@ -91,7 +105,7 @@ namespace SampleAdventure.Game.States
 			{
 				gEngine.Buf.SetFormat("The swiftly moving current sweeps ");
 
-				gEngine.GetRecordNameList(sweptOutArtifactList.Cast<IGameBase>().ToList(), ArticleType.A, true, StateDescDisplayCode.None, false, false, gEngine.Buf);
+				gEngine.GetRecordNameList(sweptOutArtifactList.Cast<IGameBase>().ToList(), recordNameListArgs, gEngine.Buf);
 
 				gEngine.Buf.AppendFormat(" downstream.");
 
