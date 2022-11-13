@@ -48,7 +48,7 @@ namespace SampleAdventure.Game.Commands
 
 		public ScoreCommand()
 		{
-			SortOrder = 470;
+			SortOrder = 440;
 
 			IsNew = true;
 
