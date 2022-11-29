@@ -35,22 +35,18 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in shotgun shells description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@001 token in anti-grav sled description will be replaced by a string returned from MacroFunc with key == 1
 
 			MacroFuncs.Add(1, () =>
 			{
-				var shotgunShellsArtifact = ADB[1];
-
-				Debug.Assert(shotgunShellsArtifact != null);
-
-				return string.Format("{0} shotgun shell{1}", GetStringFromNumber(shotgunShellsArtifact.Field1, false, Buf01), shotgunShellsArtifact.Field1 != 1 ? "s" : "");
+				return gGameState != null && gGameState.AntiGravSledActivated ? "hovering above" : "sitting on";
 			});
 
 			var synonyms = new Dictionary<long, string[]>()
 			{
-				{ 1, new string[] { "shells", "bullets", "shell", "bullet" } },
-				{ 2, new string[] { "gun" } },
-				{ 3, new string[] { "bin" } },
+				{ 1, new string[] { "anti grav sled", "sled" } },
+				{ 2, new string[] { "console", "panel" } },
+				{ 3, new string[] { "big round red button", "big round button", "big red button", "round red button", "round button", "button" } },
 			};
 
 			foreach (var synonym in synonyms)
@@ -59,20 +55,11 @@ namespace SampleAdventure.Game.Plugin
 			}
 		}
 
-		public override void InitMonsters()
+		public Engine()
 		{
-			base.InitMonsters();
+			// Required because the red button is nested "inside" multiple OnContainers
 
-			var synonyms = new Dictionary<long, string[]>()
-			{
-				{ 1, new string[] { "jemmas" } },
-				{ 2, new string[] { "androids", "android" } },
-			};
-
-			foreach (var synonym in synonyms)
-			{
-				CreateMonsterSynonyms(synonym.Key, synonym.Value);
-			}
+			ExposeContainersRecursively = true;
 		}
 	}
 }

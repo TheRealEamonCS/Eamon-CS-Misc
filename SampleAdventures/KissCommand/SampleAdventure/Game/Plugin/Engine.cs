@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using Eamon;
+using Eamon.Framework.Primitive.Enums;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Plugin
@@ -35,22 +36,9 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in shotgun shells description will be replaced by a string returned from MacroFunc with key == 1
-
-			MacroFuncs.Add(1, () =>
-			{
-				var shotgunShellsArtifact = ADB[1];
-
-				Debug.Assert(shotgunShellsArtifact != null);
-
-				return string.Format("{0} shotgun shell{1}", GetStringFromNumber(shotgunShellsArtifact.Field1, false, Buf01), shotgunShellsArtifact.Field1 != 1 ? "s" : "");
-			});
-
 			var synonyms = new Dictionary<long, string[]>()
 			{
-				{ 1, new string[] { "shells", "bullets", "shell", "bullet" } },
-				{ 2, new string[] { "gun" } },
-				{ 3, new string[] { "bin" } },
+				{ 1, new string[] { "Litry", "Stone" } },
 			};
 
 			foreach (var synonym in synonyms)
@@ -63,11 +51,28 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitMonsters();
 
-			var synonyms = new Dictionary<long, string[]>()
+			var synonyms = new Dictionary<long, string[]>();
+
+			// Use Armand instead
+
+			if (gCharacter.Gender == Gender.Female)
 			{
-				{ 1, new string[] { "jemmas" } },
-				{ 2, new string[] { "androids", "android" } },
-			};
+				var armandMonster = gMDB[1];
+
+				Debug.Assert(armandMonster != null);
+
+				armandMonster.Name = "Armand";
+
+				armandMonster.Desc = "You see a young man named Armand.  He appears to be lost and in need of assistance.  Despite this, he eyes you warily, and your efforts to help may fall on deaf ears.";
+
+				armandMonster.Gender = Gender.Male;
+
+				synonyms.Add(1, new string[] { "young man", "man" });
+			}
+			else
+			{
+				synonyms.Add(1, new string[] { "young woman", "woman" });
+			}
 
 			foreach (var synonym in synonyms)
 			{
