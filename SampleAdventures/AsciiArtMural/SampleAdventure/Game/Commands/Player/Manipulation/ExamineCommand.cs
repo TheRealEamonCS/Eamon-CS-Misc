@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Text;
 using Eamon.Game.Attributes;
 using EamonRT.Framework.Commands;
+using EamonRT.Framework.Primitive.Enums;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Commands
@@ -15,15 +16,13 @@ namespace SampleAdventure.Game.Commands
 	[ClassMappings]
 	public class ExamineCommand : EamonRT.Game.Commands.ExamineCommand, IExamineCommand
 	{
-		public override void Execute()
+		public override void ProcessEvents(EventType eventType)
 		{
-			Debug.Assert(DobjArtifact != null || DobjMonster != null);
-
-			base.Execute();
+			base.ProcessEvents(eventType);
 
 			// Mural - please see Engine.cs for more info on this (and credits)
 
-			if (DobjArtifact != null && DobjArtifact.Uid == 1)
+			if (eventType == EventType.AfterPrintArtifactFullDesc && DobjArtifact.Uid == 1)
 			{
 				gOut.Print("Gazing at the mural, you can't help but feel a sense of awe:");
 
