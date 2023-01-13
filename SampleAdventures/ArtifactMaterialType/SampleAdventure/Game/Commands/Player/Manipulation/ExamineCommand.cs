@@ -22,9 +22,14 @@ namespace SampleAdventure.Game.Commands
 
 			if (eventType == EventType.AfterPrintArtifactFullDesc)
 			{
+				// Use DobjArtifact for base-level properties and methods; gDobjArtifact allows easy access to new
+				// properties and methods defined and implemented by the game.  See Globals.cs for more details.  In
+				// practice, you could standardize and use the global macro since everything is available through it,
+				// but here both are being used for illustrative purposes.
+
 				gOut.Print("After scrutinizing {0}, you realize {1} made of {2}.",
-					gDobjArtifact(this).GetTheName(false),
-					gDobjArtifact(this).EvalPlural("it is", "they are"),
+					DobjArtifact.GetTheName(false),
+					DobjArtifact.EvalPlural("it is", "they are"),
 					gDobjArtifact(this).MaterialType == MaterialType.None ? "an unidentified material" : gDobjArtifact(this).MaterialType.ToString().ToLower());
 			}
 		}

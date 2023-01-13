@@ -88,6 +88,12 @@ namespace SampleAdventure.Game.Plugin
 			}
 		}
 
+		// This global "macro" exposes the corresponding property of a Command or CommandParser object but casts
+		// it to a game-specific interface so that new properties and methods defined and implemented by the game
+		// are easily accessible.  There may be similar macros for ActorRoom, IobjArtifact, DobjMonster, IobjMonster,
+		// etc., but this game only needs gDobjArtifact.  These macros are only required when game-specific properties
+		// or methods exist in corresponding subclassed interfaces.
+
 		public static Framework.IArtifact gDobjArtifact(object obj)
 		{
 			if (obj is ICommandParser commandParser)
