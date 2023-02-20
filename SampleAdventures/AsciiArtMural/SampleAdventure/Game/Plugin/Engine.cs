@@ -35,8 +35,9 @@ namespace SampleAdventure.Game.Plugin
 		{
 			// You can manually create ASCII art, find some online (with a permissive license), or use a generator like that found
 			// at https://www.ascii-art-generator.org/.  Then copy the ASCII artwork and encode it with a base-64 converter like that
-			// found at https://www.base64encode.org/.  Finally, take the encoded sequence and put it in a verbatim string as shown
-			// below.  This kind of artwork is best viewed with a fixed-width font.
+			// found at https://www.base64encode.org/.  Always use LF (Unix) line endings since this works with both Windows and Unix.
+			// Finally, take the encoded sequence and put it in a verbatim string as shown below.  This kind of artwork is best viewed
+			// with a fixed-width font.
 
 			// The following was generated from an image by Tua Xiong found at https://www.asciiart.eu/mythology/fantasy.
 
