@@ -22,14 +22,7 @@ namespace SampleAdventure.Game.Components
 
 			if (gEngine.ScimitarRecovered)
 			{
-				if (ActorMonster.IsCharacterMonster())
-				{
-					ActorWeapon.SetCarriedByCharacter();
-				}
-				else
-				{
-					ActorWeapon.SetCarriedByMonster(ActorMonster);
-				}
+				ActorWeapon.SetCarriedByMonster(ActorMonster);
 
 				ActorWeapon.AddStateDesc(ActorWeapon.GetReadyWeaponDesc());
 
