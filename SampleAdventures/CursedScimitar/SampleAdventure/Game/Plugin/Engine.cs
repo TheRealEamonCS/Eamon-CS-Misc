@@ -46,7 +46,7 @@ namespace SampleAdventure.Game.Plugin
 
 		public virtual void PrintScimitarSticksToHand(IRoom room, IMonster monster, IArtifact artifact, bool combatFumble = false, bool newLinePrefix = false)
 		{
-			Debug.Assert(room != null);
+			Debug.Assert(room != null && artifact != null);
 
 			var isCharacterMonster = monster == null || monster.IsCharacterMonster();
 

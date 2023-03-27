@@ -17,7 +17,7 @@ namespace SampleAdventure.Game.Components
 		{
 			// If scimitar is readied weapon and amulet not worn
 
-			if (ActorMonster.Weapon == 2 && gEngine.ShouldScimitarStickToHand(ActorMonster))
+			if (gEngine.ShouldScimitarStickToHand(ActorMonster))
 			{
 				gEngine.PrintScimitarSticksToHand(ActorRoom, ActorMonster, ActorWeapon, true, true);
 
