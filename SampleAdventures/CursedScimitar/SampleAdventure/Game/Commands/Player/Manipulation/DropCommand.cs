@@ -19,15 +19,11 @@ namespace SampleAdventure.Game.Commands
 		{
 			Debug.Assert(artifact != null);
 
-			var amuletArtifact = gADB[3];
-
-			Debug.Assert(amuletArtifact != null);
-
 			// If scimitar is readied weapon and amulet not worn
 
-			if (artifact.Uid == 2 && ActorMonster.Weapon == 2 && !amuletArtifact.IsWornByCharacter())
+			if (artifact.Uid == 2 && gEngine.ShouldScimitarStickToHand(ActorMonster))
 			{
-				gOut.Print("{0}The malevolent {1} stubbornly sticks to your hand!", DroppedArtifactList[0] != artifact ? Environment.NewLine : "", artifact.GetNoneName());
+				gEngine.PrintScimitarSticksToHand(ActorRoom, ActorMonster, artifact, false, DroppedArtifactList[0] != artifact);
 			}
 			else
 			{

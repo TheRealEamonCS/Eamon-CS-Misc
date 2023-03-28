@@ -5,6 +5,7 @@
 
 using Eamon.Game.Attributes;
 using EamonRT.Framework.Components;
+using EamonRT.Framework.Primitive.Enums;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Components
@@ -12,28 +13,21 @@ namespace SampleAdventure.Game.Components
 	[ClassMappings]
 	public class CombatComponent : EamonRT.Game.Components.CombatComponent, ICombatComponent
 	{
-		public override void ExecuteAttack()
+		public override void AttackFumbleWeaponDropped()
 		{
-			gEngine.ScimitarRecovered = false;
+			// If scimitar is readied weapon and amulet not worn
 
-			base.ExecuteAttack();
-
-			// If scimitar is fumbled weapon and amulet not worn
-
-			if (gEngine.ScimitarRecovered)
+			if (gEngine.ShouldScimitarStickToHand(ActorMonster))
 			{
-				if (ActorMonster.IsCharacterMonster())
-				{
-					ActorWeapon.SetCarriedByCharacter();
-				}
-				else
-				{
-					ActorWeapon.SetCarriedByMonster(ActorMonster);
-				}
+				gEngine.PrintScimitarSticksToHand(ActorRoom, ActorMonster, ActorWeapon, true, true);
 
-				ActorWeapon.AddStateDesc(ActorWeapon.GetReadyWeaponDesc());
+				CombatState = CombatState.EndAttack;
 
-				ActorMonster.Weapon = ActorWeapon.Uid;
+				GotoCleanup = true;
+			}
+			else
+			{
+				base.AttackFumbleWeaponDropped();
 			}
 		}
 	}

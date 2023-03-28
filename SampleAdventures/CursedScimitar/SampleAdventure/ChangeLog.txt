@@ -5,4 +5,5 @@ ChangeLog: SampleAdventure
 
 Date            Version            Who            Notes
 ----------------------------------------------------------------------------------------------------------------------------------
-20221117        2.1.0              MP             Code complete 2.1.0
+20230313        2.2.0              MP             Simplification overhaul
+20221117                           MP             Code complete 2.2.0
