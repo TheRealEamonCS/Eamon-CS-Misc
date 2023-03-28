@@ -85,5 +85,13 @@ namespace SampleAdventure.Game.Plugin
 				return (Eamon.Framework.IMonster)EamonRT.Game.Plugin.Globals.gCharMonster;
 			}
 		}
+
+		public static Eamon.Framework.IRoom gCharRoom
+		{
+			get
+			{
+				return gGameState != null ? gRDB[gGameState.Ro] : null;
+			}
+		}
 	}
 }
