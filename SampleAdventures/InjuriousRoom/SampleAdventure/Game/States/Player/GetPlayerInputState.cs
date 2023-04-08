@@ -29,13 +29,15 @@ namespace SampleAdventure.Game.States
 			{
 				Debug.Assert(gCharMonster != null);
 
+				Debug.Assert(gCharRoom != null);
+				
 				gOut.Print("The toxic chemical fumes damage your lungs and make you dizzy!");
 
 				var combatComponent = gEngine.CreateInstance<ICombatComponent>(x =>
 				{
 					x.SetNextStateFunc = s => NextState = s;
 
-					x.ActorRoom = gCharMonster.GetInRoom();
+					x.ActorRoom = gCharRoom;
 
 					x.Dobj = gCharMonster;
 
