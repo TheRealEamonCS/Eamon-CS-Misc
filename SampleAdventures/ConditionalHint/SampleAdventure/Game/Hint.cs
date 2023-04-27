@@ -19,11 +19,7 @@ namespace SampleAdventure.Game
 			{
 				if (gEngine.EnableMutateProperties)
 				{
-					Debug.Assert(gCharMonster != null);
-
-					var room = gCharMonster.GetInRoom();
-
-					Debug.Assert(room != null);
+					Debug.Assert(gCharRoom != null);
 
 					switch (Uid)
 					{
@@ -35,7 +31,7 @@ namespace SampleAdventure.Game
 
 							// Show Hint if Magic MacGuffin either in Room or carried by player and also is open
 
-							return (magicMacGuffinArtifact.IsInRoom(room) || magicMacGuffinArtifact.IsCarriedByCharacter()) && magicMacGuffinArtifact.InContainer.IsOpen();
+							return (magicMacGuffinArtifact.IsInRoom(gCharRoom) || magicMacGuffinArtifact.IsCarriedByCharacter()) && magicMacGuffinArtifact.InContainer.IsOpen();
 
 						default:
 
