@@ -23,14 +23,14 @@ namespace SampleAdventure.Game.States
 
 			Debug.Assert(hazMatSuitArtifact != null);
 
+			Debug.Assert(gCharMonster != null);
+
+			Debug.Assert(gCharRoom != null);
+
 			// In the chemical factory
 
-			if (eventType == EventType.BeforePrintCommandPrompt && gEngine.ShouldPreTurnProcess && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByCharacter())
+			if (eventType == EventType.BeforePrintCommandPrompt && gEngine.ShouldPreTurnProcess && gGameState.Ro == 2 && gGameState.CurrTurn % 2 == 0 && !hazMatSuitArtifact.IsWornByMonster(gCharMonster))
 			{
-				Debug.Assert(gCharMonster != null);
-
-				Debug.Assert(gCharRoom != null);
-				
 				gOut.Print("The toxic chemical fumes damage your lungs and make you dizzy!");
 
 				var combatComponent = gEngine.CreateInstance<ICombatComponent>(x =>

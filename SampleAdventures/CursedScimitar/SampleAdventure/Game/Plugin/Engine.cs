@@ -41,7 +41,7 @@ namespace SampleAdventure.Game.Plugin
 
 			Debug.Assert(amuletArtifact != null);
 
-			return monster.Weapon == 2 && !amuletArtifact.IsWornByMonster(monster, includeCharacter: true);
+			return monster.Weapon == 2 && !amuletArtifact.IsWornByMonster(monster);
 		}
 
 		public virtual void PrintScimitarSticksToHand(IRoom room, IMonster monster, IArtifact artifact, bool combatFumble = false, bool newLinePrefix = false)
