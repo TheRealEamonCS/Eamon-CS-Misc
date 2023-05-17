@@ -17,7 +17,7 @@ namespace SampleAdventure.Game.Commands
 	[ClassMappings]
 	public class ScoreCommand : EamonRT.Game.Commands.Command, Framework.Commands.IScoreCommand
 	{
-		public override void Execute()
+		public override void ExecuteForPlayer()
 		{
 			// This command is "out-of-band," so don't process start of round light source
 			// burn down, etc.
