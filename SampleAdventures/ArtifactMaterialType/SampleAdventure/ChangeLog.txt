@@ -5,4 +5,5 @@ ChangeLog: SampleAdventure
 
 Date            Version            Who            Notes
 ----------------------------------------------------------------------------------------------------------------------------------
-20230111        2.2.0              MP             Code complete 2.2.0
+20230531        2.2.0              MP             Player/Monster Command Unification overhaul
+20230111                           MP             Code complete 2.2.0

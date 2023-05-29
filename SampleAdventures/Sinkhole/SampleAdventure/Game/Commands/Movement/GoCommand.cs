@@ -14,7 +14,7 @@ namespace SampleAdventure.Game.Commands
 	[ClassMappings]
 	public class GoCommand : EamonRT.Game.Commands.GoCommand, IGoCommand
 	{
-		public override void Execute()
+		public override void ExecuteForPlayer()
 		{
 			Debug.Assert(DobjArtifact != null);
 
@@ -30,7 +30,7 @@ namespace SampleAdventure.Game.Commands
 			}
 			else
 			{
-				base.Execute();
+				base.ExecuteForPlayer();
 			}
 		}
 	}

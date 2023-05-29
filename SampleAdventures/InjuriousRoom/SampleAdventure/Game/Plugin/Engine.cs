@@ -43,7 +43,7 @@ namespace SampleAdventure.Game.Plugin
 
 				Debug.Assert(hazMatSuitArtifact != null);
 
-				return !hazMatSuitArtifact.IsWornByCharacter() ? "And you have forgotten to wear your Haz-Mat suit!" : "";
+				return !hazMatSuitArtifact.IsWornByMonster(gCharMonster) ? "And you have forgotten to wear your Haz-Mat suit!" : "";
 			});
 
 			var synonyms = new Dictionary<long, string[]>()

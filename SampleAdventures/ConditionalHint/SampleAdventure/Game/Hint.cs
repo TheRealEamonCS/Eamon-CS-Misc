@@ -31,7 +31,7 @@ namespace SampleAdventure.Game
 
 							// Show Hint if Magic MacGuffin either in Room or carried by player and also is open
 
-							return (magicMacGuffinArtifact.IsInRoom(gCharRoom) || magicMacGuffinArtifact.IsCarriedByCharacter()) && magicMacGuffinArtifact.InContainer.IsOpen();
+							return (magicMacGuffinArtifact.IsInRoom(gCharRoom) || magicMacGuffinArtifact.IsCarriedByMonster(gCharMonster)) && magicMacGuffinArtifact.InContainer.IsOpen();
 
 						default:
 

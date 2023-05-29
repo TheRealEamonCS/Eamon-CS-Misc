@@ -31,7 +31,7 @@ namespace SampleAdventure.Game.Commands
 			}
 		}
 
-		public override void Execute()
+		public override void ExecuteForPlayer()
 		{
 			Debug.Assert(DobjArtifact != null && IobjArtifact != null);
 
@@ -40,7 +40,7 @@ namespace SampleAdventure.Game.Commands
 				gEngine.ConvertTreasureToContainer(IobjArtifact);
 			}
 
-			base.Execute();
+			base.ExecuteForPlayer();
 
 			if (IobjArtifact.Uid == 1)
 			{

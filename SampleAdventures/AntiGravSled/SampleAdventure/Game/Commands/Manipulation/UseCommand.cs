@@ -14,7 +14,7 @@ namespace SampleAdventure.Game.Commands
 	[ClassMappings]
 	public class UseCommand : EamonRT.Game.Commands.UseCommand, IUseCommand
 	{
-		public override void Execute()
+		public override void ExecuteForPlayer()
 		{
 			Debug.Assert(DobjArtifact != null);
 
@@ -45,7 +45,7 @@ namespace SampleAdventure.Game.Commands
 			}
 			else
 			{
-				base.Execute();
+				base.ExecuteForPlayer();
 			}
 		}
 	}

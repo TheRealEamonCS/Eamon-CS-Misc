@@ -5,5 +5,7 @@ ChangeLog: SampleAdventure
 
 Date            Version            Who            Notes
 ----------------------------------------------------------------------------------------------------------------------------------
-20230313        2.2.0              MP             Simplification overhaul
+20230531        2.2.0              MP             Player/Monster Command Unification overhaul
+20230531                           MP             Artifact Character/Monster Method Unification overhaul
+20230313                           MP             Simplification overhaul
 20221117                           MP             Code complete 2.2.0

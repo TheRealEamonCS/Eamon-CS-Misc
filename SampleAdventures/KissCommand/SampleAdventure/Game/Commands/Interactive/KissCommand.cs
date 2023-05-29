@@ -16,7 +16,7 @@ namespace SampleAdventure.Game.Commands
 	[ClassMappings]
 	public class KissCommand : EamonRT.Game.Commands.Command, Framework.Commands.IKissCommand
 	{
-		public override void Execute()
+		public override void ExecuteForPlayer()
 		{
 			Debug.Assert(DobjArtifact != null || DobjMonster != null);
 
