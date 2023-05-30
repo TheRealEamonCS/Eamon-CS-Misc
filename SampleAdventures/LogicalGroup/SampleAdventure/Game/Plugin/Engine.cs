@@ -5,14 +5,13 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using Eamon;
 using Eamon.Framework.Args;
-using Eamon.Framework.Primitive.Enums;
 using Eamon.Framework;
 using static SampleAdventure.Game.Plugin.Globals;
-using System.Linq;
 
 namespace SampleAdventure.Game.Plugin
 {
