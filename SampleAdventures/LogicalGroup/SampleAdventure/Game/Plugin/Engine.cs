@@ -17,6 +17,10 @@ namespace SampleAdventure.Game.Plugin
 {
 	public class Engine : EamonRT.Game.Plugin.Engine, Framework.Plugin.IEngine
 	{
+		public virtual string[] UtensilArtifactNames { get; set; }
+
+		public virtual long[] UtensilArtifactUids { get; set; }
+
 		public override RetCode LoadPluginClassMappings()
 		{
 			RetCode rc;
@@ -41,13 +45,11 @@ namespace SampleAdventure.Game.Plugin
 
 			Debug.Assert(recordList != null);
 
-			var utensilArtifactUids = new long[] { 1, 2, 3 };
-
 			// Strip out knife, fork and spoon Artifacts when utensils Artifact present in list
 
 			if (recordList.FirstOrDefault(r => r is IArtifact a && a.Uid == 4) != null)
 			{
-				recordList = recordList.Where(r => !(r is IArtifact a) || !utensilArtifactUids.Contains(a.Uid)).ToList();
+				recordList = recordList.Where(r => !(r is IArtifact a) || !UtensilArtifactUids.Contains(a.Uid)).ToList();
 			}
 
 			rc = base.GetRecordNameList(recordList, args, buf);
@@ -118,6 +120,13 @@ namespace SampleAdventure.Game.Plugin
 			{
 				utensilsArtifact.SetInLimbo();
 			}
+		}
+
+		public Engine()
+		{
+			UtensilArtifactNames = new string[] { "knife", "fork", "spoon" };
+
+			UtensilArtifactUids = new long[] { 1, 2, 3 };
 		}
 	}
 }

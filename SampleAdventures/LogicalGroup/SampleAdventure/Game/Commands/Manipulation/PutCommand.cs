@@ -19,13 +19,11 @@ namespace SampleAdventure.Game.Commands
 		{
 			Debug.Assert(DobjArtifact != null && IobjArtifact != null);
 
-			var utensilArtifactUids = new long[] { 1, 2, 3 };
-
 			// Can't put anything into the utensils
 
 			if (IobjArtifact.Uid == 4)
 			{
-				if (utensilArtifactUids.Contains(DobjArtifact.Uid))
+				if (gEngine.UtensilArtifactUids.Contains(DobjArtifact.Uid))
 				{
 					gOut.Print("That's already part of {0}.", IobjArtifact.GetTheName());
 

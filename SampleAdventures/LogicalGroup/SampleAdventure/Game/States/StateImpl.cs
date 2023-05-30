@@ -17,9 +17,7 @@ namespace SampleAdventure.Game.States
 	{
 		public override void PrintDontFollowYou()
 		{
-			var utensilArtifactNames = new string[] { "knife", "fork", "spoon" };
-
-			var matches = gCommandParser?.DobjData?.Name != null ? utensilArtifactNames.FindAllIndexOf(uan => uan.StartsWith(gCommandParser.DobjData.Name, StringComparison.OrdinalIgnoreCase) || uan.EndsWith(gCommandParser.DobjData.Name, StringComparison.OrdinalIgnoreCase)) : new int[] { };
+			var matches = gCommandParser?.DobjData?.Name != null ? gEngine.UtensilArtifactNames.FindAllIndexOf(uan => uan.StartsWith(gCommandParser.DobjData.Name, StringComparison.OrdinalIgnoreCase) || uan.EndsWith(gCommandParser.DobjData.Name, StringComparison.OrdinalIgnoreCase)) : new int[] { };
 
 			// Can't remove anything from the utensils
 
@@ -27,7 +25,7 @@ namespace SampleAdventure.Game.States
 			{
 				gOut.Print("You can manipulate the individual {0} directly.", gCommandParser.IobjArtifact.GetNoneName());
 
-				gCommandParser.LastItNameStr = utensilArtifactNames[matches[0]];
+				gCommandParser.LastItNameStr = gEngine.UtensilArtifactNames[matches[0]];
 			}
 			else
 			{

@@ -7,6 +7,10 @@ namespace SampleAdventure.Framework.Plugin
 {
 	public interface IEngine : EamonRT.Framework.Plugin.IEngine
 	{
+		string[] UtensilArtifactNames { get; set; }
+
+		long[] UtensilArtifactUids { get; set; }
+
 		void SplitUtensils();
 
 		void CoalesceUtensils();
