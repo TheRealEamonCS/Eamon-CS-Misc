@@ -9,8 +9,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Eamon;
-using Eamon.Framework.Args;
 using Eamon.Framework;
+using Eamon.Framework.Args;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Plugin
