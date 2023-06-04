@@ -36,8 +36,6 @@ namespace SampleAdventure.Game.Commands
 
 				Debug.Assert(gEngine.IsSuccess(rc));
 
-				gEngine.Thread.Sleep(150);
-
 				gOut.Print("{0}", gEngine.LineSep);
 
 				gOut.Print("{0}", Encoding.UTF8.GetString(Convert.FromBase64String(gEngine.MuralData)));
