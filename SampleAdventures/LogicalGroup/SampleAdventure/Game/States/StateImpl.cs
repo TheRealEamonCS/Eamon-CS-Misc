@@ -23,9 +23,11 @@ namespace SampleAdventure.Game.States
 
 			if (gCommandParser != null && gCommandParser.NextCommand is IRemoveCommand && matches.Length > 0 && gCommandParser.IobjArtifact != null && gCommandParser.IobjArtifact.Uid == 4)
 			{
-				gOut.Print("You can manipulate the individual {0} directly.", gCommandParser.IobjArtifact.GetNoneName());
+				var artifactName = gEngine.UtensilArtifactNames[matches[0]];
 
-				gCommandParser.LastItNameStr = gEngine.UtensilArtifactNames[matches[0]];
+				gOut.Print("You can manipulate the {0} directly.", artifactName);
+
+				gCommandParser.LastItNameStr = artifactName;
 			}
 			else
 			{
