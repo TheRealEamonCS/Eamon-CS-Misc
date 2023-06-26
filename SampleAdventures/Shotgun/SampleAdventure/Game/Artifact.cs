@@ -18,7 +18,7 @@ namespace SampleAdventure.Game
 		{
 			// Only player character can wield shotgun
 
-			return Uid != 2 ? base.IsReadyableByMonsterUid(monsterUid) : false;
+			return Uid != 2 || monsterUid == gCharMonster.Uid ? base.IsReadyableByMonsterUid(monsterUid) : false;
 		}
 
 		public override bool ShouldAddContents(IArtifact artifact, ContainerType containerType = ContainerType.In)
