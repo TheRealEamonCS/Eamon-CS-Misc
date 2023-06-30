@@ -15,10 +15,11 @@ using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Plugin
 {
-	// This Sample Adventure implements the concept of a logical group - a group of related Artifacts
-	// represented by a higher-level Artifact when they all share the same Location.  This logic is
-	// complex but also appears complete and could be further generalized within a game to support
-	// multiple logical groups if needed.
+	// This Sample Adventure implements the concept of a logical group - a set of related Artifacts
+	// represented by a higher-level Artifact when they all share the same Location.  Although this
+	// logic is somewhat complex, it may be refactored later to adopt a simpler approach if one is
+	// discovered.  Regardless, the code can be generalized within a game to accommodate multiple
+	// logical groups if necessary.
 	//
 	// The whole idea of Group Artifacts (as a complement to Group Monsters) and logical groups (as
 	// represented here) would be an attractive addition to the EamonRT game engine.  But both the
