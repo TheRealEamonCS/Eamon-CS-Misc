@@ -24,7 +24,7 @@ namespace SampleAdventure.Game
 					switch (Uid)
 					{
 						case 1:     // Elevator
-						case 2:		// Panel
+						case 2:		// Control panel
 						{
 							var roomUids = new long[] { 1, 2, 3 };			// Should contain all elevator exit rooms
 

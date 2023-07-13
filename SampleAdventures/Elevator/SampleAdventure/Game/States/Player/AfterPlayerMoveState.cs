@@ -39,7 +39,7 @@ namespace SampleAdventure.Game.States
 
 					if (gGameState.R3 == 4)
 					{
-						gOut.Print("The elevator door slides closed behind you, and it proceeds on its way.");
+						gOut.Print("The door closes behind you, and the elevator car quickly departs.");
 
 						elevatorArtifact.DoorGate.SetOpen(false);
 

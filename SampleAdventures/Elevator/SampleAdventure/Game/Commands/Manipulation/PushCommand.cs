@@ -29,9 +29,13 @@ namespace SampleAdventure.Game.Commands
 
 					gOut.Print("{0} pushed.", DobjArtifact.GetNoneName(true));
 
-					if (!gGameState.UpButtonPushed && !gGameState.DownButtonPushed)
+					if (gGameState.UpButtonPushed || gGameState.DownButtonPushed)
 					{
-						gOut.Print("The elevator arrives from {0}, and the door quietly slides open.", DobjArtifact.Uid == 3 ? (ActorRoom.Uid == gEngine.MinElevatorRoomUid ? "above" : "below") : ActorRoom.Uid == gEngine.MaxElevatorRoomUid ? "below" : "above");
+						gOut.Print("{0} flashes briefly.", DobjArtifact.GetTheName(true));
+					}
+					else
+					{ 
+						gOut.Print("The elevator car arrives from {0}, and the door quietly slides open.", DobjArtifact.Uid == 3 ? (ActorRoom.Uid == gEngine.MinElevatorRoomUid ? "above" : "below") : ActorRoom.Uid == gEngine.MaxElevatorRoomUid ? "below" : "above");
 
 						elevatorArtifact.DoorGate.SetOpen(true);
 
@@ -45,10 +49,6 @@ namespace SampleAdventure.Game.Commands
 						{
 							gGameState.DownButtonPushed = true;
 						}
-					}
-					else
-					{
-						gOut.Print("Nothing happens.");
 					}
 
 					break;
@@ -65,11 +65,9 @@ namespace SampleAdventure.Game.Commands
 					}
 					else
 					{
-						gOut.Print("The door quietly slides closed and the elevator starts to {0}.", gGameState.UpButtonPushed ? "ascend" : "descend");
+						gOut.Print("The door closes, and the elevator starts to {0}.", gGameState.UpButtonPushed ? "ascend" : "descend");
 
 						gOut.Print("Moments later, it comes to a halt and the door opens.");
-
-						elevatorArtifact.DoorGate.SetOpen(true);
 
 						gGameState.ElevatorRoomUid = DobjArtifact.Treasure.Field1;
 					}

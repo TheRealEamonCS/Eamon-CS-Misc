@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Eamon;
+using Eamon.Framework.Primitive.Enums;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Plugin
@@ -53,6 +54,7 @@ namespace SampleAdventure.Game.Plugin
 			var synonyms = new Dictionary<long, string[]>()
 			{
 				{ 1, new string[] { "elevator door", "door" } },
+				{ 2, new string[] { "panel" } },
 				{ 3, new string[] { "button" } },
 				{ 4, new string[] { "button" } },
 				{ 5, new string[] { "panel" } },
@@ -74,6 +76,8 @@ namespace SampleAdventure.Game.Plugin
 			RmDescLen = 512;
 
 			StartRoom = 2;
+
+			PoundCharPolicy = PoundCharPolicy.None;
 
 			MinElevatorRoomUid = 1;			// Should be the lowest elevator exit Room Uid
 
