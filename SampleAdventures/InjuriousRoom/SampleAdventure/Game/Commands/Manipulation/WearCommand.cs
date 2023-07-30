@@ -3,10 +3,10 @@
 
 // Copyright (c) 2014+ by Michael Penner.  All rights reserved.
 
+using System.Diagnostics;
 using Eamon.Game.Attributes;
 using EamonRT.Framework.Commands;
 using EamonRT.Framework.States;
-using System.Diagnostics;
 using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Game.Commands
