@@ -24,7 +24,7 @@ namespace SampleAdventure.Game.Commands
 
 			// Can't wear armor while wearing Haz-Mat suit
 
-			if (DobjArtifact.Wearable != null && DobjArtifact.Wearable.Field1 > 1 && gGameState.Ar <= 0 && hazMatSuitArtifact.IsWornByMonster(ActorMonster))
+			if (DobjArtifact.Wearable != null && DobjArtifact.Wearable.Field1 > 1 && gGameState.Ar <= 0 && DobjArtifact.IsCarriedByMonster(ActorMonster) && hazMatSuitArtifact.IsWornByMonster(ActorMonster))
 			{
 				PrintWearingRemoveFirst01(hazMatSuitArtifact);
 
