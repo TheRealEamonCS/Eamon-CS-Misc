@@ -44,14 +44,14 @@ namespace SampleAdventure.Game.Plugin
 			return monster.Weapon == 2 && !amuletArtifact.IsWornByMonster(monster);
 		}
 
-		public virtual void PrintScimitarSticksToHand(IRoom room, IMonster monster, IArtifact artifact, bool combatFumble = false, bool newLinePrefix = false)
+		public virtual void PrintScimitarSticksToHand(IRoom room, IMonster monster, IArtifact artifact, bool combatFumble = false, bool prependNewLine = false)
 		{
 			Debug.Assert(room != null && artifact != null);
 
 			var isCharacterMonster = monster == null || monster.IsCharacterMonster();
 
 			Out.Print("{0}The malevolent {1} stubbornly sticks to {2} hand!", 
-				newLinePrefix ? Environment.NewLine : "", 
+				prependNewLine ? Environment.NewLine : "", 
 				isCharacterMonster || room.IsLit() ? artifact.GetNoneName() : "weapon", 
 				room.IsLit() ?
 					(!isCharacterMonster ? monster.GetTheName().AddPossessiveSuffix() : "your") :
