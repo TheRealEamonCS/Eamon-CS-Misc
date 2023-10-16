@@ -22,7 +22,7 @@ namespace SampleAdventure.Game.Commands
 
 			// Mural - please see Engine.cs for more info on this (and credits)
 
-			if (eventType == EventType.AfterPrintArtifactFullDesc && DobjArtifact.Uid == 1)
+			if (eventType == EventType.AfterPrintArtifactFullDesc && DobjArtifact.Uid == 1 && !gEngine.EnableScreenReaderMode)
 			{
 				gOut.Print("Gazing at the mural, you can't help but feel a sense of awe:");
 
