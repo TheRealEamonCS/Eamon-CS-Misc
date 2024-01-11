@@ -30,7 +30,7 @@ namespace SampleAdventure.Game.Commands
 			// when calculating the player's score.  Also the percent complete is easily
 			// changed to a points system if preferred.
 
-			var rooms = gEngine.Database.RoomTable.Records.Where(r => r.Zone == 2).ToList();
+			var rooms = gDatabase.RoomTable.Records.Where(r => r.Zone == 2).ToList();
 
 			var seenCount = rooms.Count(r => r.Seen);
 
