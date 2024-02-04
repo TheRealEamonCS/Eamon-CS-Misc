@@ -9,6 +9,8 @@ using Eamon.Framework.Portability;
 
 namespace SampleAdventure.Game.Plugin
 {
+#pragma warning disable IDE1006 // Naming Styles
+
 	public static class Globals
 	{
 		public static Framework.Plugin.IEngine gEngine
@@ -95,4 +97,6 @@ namespace SampleAdventure.Game.Plugin
 			}
 		}
 	}
+
+#pragma warning restore IDE1006 // Naming Styles
 }
