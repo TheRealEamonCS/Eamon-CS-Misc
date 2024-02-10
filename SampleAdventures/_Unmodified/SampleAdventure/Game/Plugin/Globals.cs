@@ -3,6 +3,7 @@
 
 // Copyright (c) 2014+ by Michael Penner.  All rights reserved.
 
+using Eamon.Framework;
 using Eamon.Framework.DataStorage.Generic;
 using Eamon.Framework.Portability;
 
@@ -31,70 +32,70 @@ namespace SampleAdventure.Game.Plugin
 		{
 			get
 			{
-				return EamonRT.Game.Plugin.Globals.gOut;
+				return (ITextWriter)EamonRT.Game.Plugin.Globals.gOut;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gRDB"/>
-		public static IRecordDb<Eamon.Framework.IRoom> gRDB
+		public static IRecordDb<IRoom> gRDB
 		{
 			get
 			{
-				return (IRecordDb<Eamon.Framework.IRoom>)EamonRT.Game.Plugin.Globals.gRDB;
+				return EamonRT.Game.Plugin.Globals.gRDB;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gADB"/>
-		public static IRecordDb<Eamon.Framework.IArtifact> gADB
+		public static IRecordDb<IArtifact> gADB
 		{
 			get
 			{
-				return (IRecordDb<Eamon.Framework.IArtifact>)EamonRT.Game.Plugin.Globals.gADB;
+				return EamonRT.Game.Plugin.Globals.gADB;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gEDB"/>
-		public static IRecordDb<Eamon.Framework.IEffect> gEDB
+		public static IRecordDb<IEffect> gEDB
 		{
 			get
 			{
-				return (IRecordDb<Eamon.Framework.IEffect>)EamonRT.Game.Plugin.Globals.gEDB;
+				return EamonRT.Game.Plugin.Globals.gEDB;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gMDB"/>
-		public static IRecordDb<Eamon.Framework.IMonster> gMDB
+		public static IRecordDb<IMonster> gMDB
 		{
 			get
 			{
-				return (IRecordDb<Eamon.Framework.IMonster>)EamonRT.Game.Plugin.Globals.gMDB;
+				return EamonRT.Game.Plugin.Globals.gMDB;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gGameState"/>
-		public static Eamon.Framework.IGameState gGameState
+		public static IGameState gGameState
 		{
 			get
 			{
-				return (Eamon.Framework.IGameState)EamonRT.Game.Plugin.Globals.gGameState;
+				return (IGameState)EamonRT.Game.Plugin.Globals.gGameState;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gCharacter"/>
-		public static Eamon.Framework.ICharacter gCharacter
+		public static ICharacter gCharacter
 		{
 			get
 			{
-				return (Eamon.Framework.ICharacter)EamonRT.Game.Plugin.Globals.gCharacter;
+				return (ICharacter)EamonRT.Game.Plugin.Globals.gCharacter;
 			}
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gCharMonster"/>
-		public static Eamon.Framework.IMonster gCharMonster
+		public static IMonster gCharMonster
 		{
 			get
 			{
-				return (Eamon.Framework.IMonster)EamonRT.Game.Plugin.Globals.gCharMonster;
+				return (IMonster)EamonRT.Game.Plugin.Globals.gCharMonster;
 			}
 		}
 	}

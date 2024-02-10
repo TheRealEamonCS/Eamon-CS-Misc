@@ -3,6 +3,7 @@
 
 // Copyright (c) 2014+ by Michael Penner.  All rights reserved.
 
+using Eamon.Framework;
 using Eamon.Framework.DataStorage.Generic;
 using Eamon.Framework.Portability;
 
@@ -35,39 +36,12 @@ namespace SampleAdventure.Game.Plugin
 			}
 		}
 
-		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gRDB"/>
-		public static IRecordDb<Eamon.Framework.IRoom> gRDB
-		{
-			get
-			{
-				return (IRecordDb<Eamon.Framework.IRoom>)EamonRT.Game.Plugin.Globals.gRDB;
-			}
-		}
-
-		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gADB"/>
-		public static IRecordDb<Eamon.Framework.IArtifact> gADB
-		{
-			get
-			{
-				return (IRecordDb<Eamon.Framework.IArtifact>)EamonRT.Game.Plugin.Globals.gADB;
-			}
-		}
-
-		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gEDB"/>
-		public static IRecordDb<Eamon.Framework.IEffect> gEDB
-		{
-			get
-			{
-				return (IRecordDb<Eamon.Framework.IEffect>)EamonRT.Game.Plugin.Globals.gEDB;
-			}
-		}
-
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gMDB"/>
-		public static IRecordDb<Eamon.Framework.IMonster> gMDB
+		public static IRecordDb<IMonster> gMDB
 		{
 			get
 			{
-				return (IRecordDb<Eamon.Framework.IMonster>)EamonRT.Game.Plugin.Globals.gMDB;
+				return EamonRT.Game.Plugin.Globals.gMDB;
 			}
 		}
 
@@ -81,20 +55,11 @@ namespace SampleAdventure.Game.Plugin
 		}
 
 		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gCharacter"/>
-		public static Eamon.Framework.ICharacter gCharacter
+		public static ICharacter gCharacter
 		{
 			get
 			{
-				return (Eamon.Framework.ICharacter)EamonRT.Game.Plugin.Globals.gCharacter;
-			}
-		}
-
-		/// <inheritdoc cref="EamonRT.Game.Plugin.Globals.gCharMonster"/>
-		public static Eamon.Framework.IMonster gCharMonster
-		{
-			get
-			{
-				return (Eamon.Framework.IMonster)EamonRT.Game.Plugin.Globals.gCharMonster;
+				return EamonRT.Game.Plugin.Globals.gCharacter;
 			}
 		}
 	}
