@@ -8,6 +8,7 @@ using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Framework.Commands
 {
+	/// <summary></summary>
 	public interface IPushCommand : ICommand
 	{
 
