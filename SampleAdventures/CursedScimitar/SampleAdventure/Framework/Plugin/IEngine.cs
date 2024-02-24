@@ -7,6 +7,7 @@ using Eamon.Framework;
 
 namespace SampleAdventure.Framework.Plugin
 {
+	/// <inheritdoc />
 	public interface IEngine : EamonRT.Framework.Plugin.IEngine
 	{
 		bool ShouldScimitarStickToHand(IMonster monster);		// Note:  this should probably be a Monster method, but to keep it simple, we'll put it here

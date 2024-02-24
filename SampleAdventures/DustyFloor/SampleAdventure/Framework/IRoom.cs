@@ -7,6 +7,7 @@ using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Framework
 {
+	/// <inheritdoc />
 	public interface IRoom : Eamon.Framework.IRoom
 	{
 		long Traversals { get; set; }
