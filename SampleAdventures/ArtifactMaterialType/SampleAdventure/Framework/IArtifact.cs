@@ -8,6 +8,7 @@ using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Framework
 {
+	/// <inheritdoc />
 	public interface IArtifact : Eamon.Framework.IArtifact
 	{
 		MaterialType MaterialType { get; set; }

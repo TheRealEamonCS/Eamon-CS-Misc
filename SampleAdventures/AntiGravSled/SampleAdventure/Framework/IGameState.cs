@@ -7,6 +7,7 @@ using static SampleAdventure.Game.Plugin.Globals;
 
 namespace SampleAdventure.Framework
 {
+	/// <inheritdoc />
 	public interface IGameState : Eamon.Framework.IGameState
 	{
 		bool AntiGravSledActivated { get; set; }
