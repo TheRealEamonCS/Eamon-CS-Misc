@@ -27,7 +27,7 @@ namespace SampleAdventure.Game
 
 			// Shotgun can only contain shotgun shells
 
-			return Uid == 2 ? artifact.Uid == 1 : base.ShouldAddContents(artifact, containerType);
+			return Uid != 2 || artifact.Uid == 1 ? base.ShouldAddContents(artifact, containerType) : false;
 		}
 	}
 }
