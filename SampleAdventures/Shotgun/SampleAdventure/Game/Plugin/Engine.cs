@@ -35,9 +35,9 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in shotgun shells description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@002 token in shotgun shells description will be replaced by a string returned from MacroFunc with key == 2
 
-			MacroFuncs.Add(1, () =>
+			MacroFuncs.Add(2, () =>
 			{
 				var shotgunShellsArtifact = ADB[1];
 
@@ -73,6 +73,13 @@ namespace SampleAdventure.Game.Plugin
 			{
 				CreateMonsterSynonyms(synonym.Key, synonym.Value);
 			}
+		}
+
+		public Engine()
+		{
+			// The @@001 token in Module description will be replaced by a string returned from MacroFunc with key == 1
+
+			MacroFuncs.Add(1, () => System.IO.Path.DirectorySeparatorChar.ToString());
 		}
 	}
 }

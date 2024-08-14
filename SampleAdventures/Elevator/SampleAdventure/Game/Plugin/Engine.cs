@@ -39,7 +39,7 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			MacroFuncs.Add(1, () =>
+			MacroFuncs.Add(2, () =>
 			{
 				var result = "a button";
 
@@ -82,6 +82,10 @@ namespace SampleAdventure.Game.Plugin
 			MinElevatorRoomUid = 1;			// Should be the lowest elevator exit Room Uid
 
 			MaxElevatorRoomUid = 3;       // Should be the highest elevator exit Room Uid
+
+			// The @@001 token in Module description will be replaced by a string returned from MacroFunc with key == 1
+
+			MacroFuncs.Add(1, () => System.IO.Path.DirectorySeparatorChar.ToString());
 		}
 	}
 }
