@@ -46,5 +46,12 @@ namespace SampleAdventure.Game.Plugin
 				CreateArtifactSynonyms(synonym.Key, synonym.Value);
 			}
 		}
+
+		public Engine()
+		{
+			// The @@001 token in Module description will be replaced by a string returned from MacroFunc with key == 1
+
+			MacroFuncs.Add(1, () => System.IO.Path.DirectorySeparatorChar.ToString());
+		}
 	}
 }

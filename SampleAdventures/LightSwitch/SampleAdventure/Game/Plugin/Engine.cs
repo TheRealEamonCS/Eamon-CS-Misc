@@ -35,9 +35,9 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in light switch description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@002 token in light switch description will be replaced by a string returned from MacroFunc with key == 2
 
-			MacroFuncs.Add(1, () =>
+			MacroFuncs.Add(2, () =>
 			{
 				var lightSwitchArtifact = ADB[1];
 
@@ -55,6 +55,13 @@ namespace SampleAdventure.Game.Plugin
 			{
 				CreateArtifactSynonyms(synonym.Key, synonym.Value);
 			}
+		}
+
+		public Engine()
+		{
+			// The @@001 token in Module description will be replaced by a string returned from MacroFunc with key == 1
+
+			MacroFuncs.Add(1, () => System.IO.Path.DirectorySeparatorChar.ToString());
 		}
 	}
 }

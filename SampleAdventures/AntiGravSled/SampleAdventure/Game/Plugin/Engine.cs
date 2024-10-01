@@ -35,9 +35,9 @@ namespace SampleAdventure.Game.Plugin
 		{
 			base.InitArtifacts();
 
-			// The @@001 token in anti-grav sled description will be replaced by a string returned from MacroFunc with key == 1
+			// The @@002 token in anti-grav sled description will be replaced by a string returned from MacroFunc with key == 2
 
-			MacroFuncs.Add(1, () =>
+			MacroFuncs.Add(2, () =>
 			{
 				return gGameState != null && gGameState.AntiGravSledActivated ? "hovering above" : "sitting on";
 			});
@@ -60,6 +60,10 @@ namespace SampleAdventure.Game.Plugin
 			// Required because the red button is nested "inside" multiple OnContainers
 
 			ExposeContainersRecursively = true;
+
+			// The @@001 token in Module description will be replaced by a string returned from MacroFunc with key == 1
+
+			MacroFuncs.Add(1, () => System.IO.Path.DirectorySeparatorChar.ToString());
 		}
 	}
 }
