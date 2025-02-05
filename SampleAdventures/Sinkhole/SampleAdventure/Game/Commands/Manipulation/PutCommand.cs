@@ -22,7 +22,7 @@ namespace SampleAdventure.Game.Commands
 
 			if (eventType == EventType.AfterPutArtifact && IobjArtifact.Uid == 1)
 			{
-				if (ActorRoom.IsLit())
+				if (ActorRoom.IsViewable())
 				{
 					gOut.Print("{0} plummet{1} into the depths of the sinkhole!", DobjArtifact.GetTheName(true), DobjArtifact.EvalPlural("s", ""));
 				}
