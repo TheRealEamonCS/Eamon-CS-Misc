@@ -52,8 +52,8 @@ namespace SampleAdventure.Game.Plugin
 
 			Out.Print("{0}The malevolent {1} stubbornly sticks to {2} hand!", 
 				prependNewLine ? Environment.NewLine : "", 
-				isCharacterMonster || room.IsLit() ? artifact.GetNoneName() : "weapon", 
-				room.IsLit() ?
+				isCharacterMonster || room.IsViewable() ? artifact.GetNoneName() : "weapon", 
+				room.IsViewable() ?
 					(!isCharacterMonster ? monster.GetTheName().AddPossessiveSuffix() : "your") :
 					(!isCharacterMonster && combatFumble ? "the offender's" : !isCharacterMonster ? "the entity's" : "your"));
 		}

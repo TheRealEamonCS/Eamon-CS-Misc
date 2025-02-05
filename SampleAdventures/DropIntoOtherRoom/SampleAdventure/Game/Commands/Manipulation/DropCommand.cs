@@ -25,7 +25,7 @@ namespace SampleAdventure.Game.Commands
 
 			if (ActorRoom.Uid == 2)
 			{
-				if (ActorRoom.IsLit())
+				if (ActorRoom.IsViewable())
 				{
 					gOut.Print("{0}{1} fall{2} to the floor below.", Environment.NewLine, artifact.GetTheName(true), artifact.EvalPlural("s", ""));
 				}
