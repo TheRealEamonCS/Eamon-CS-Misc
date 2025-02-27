@@ -28,6 +28,10 @@ namespace SampleAdventure.Game.Plugin
 
 	public class Engine : EamonRT.Game.Plugin.Engine, Framework.Plugin.IEngine
 	{
+		StringBuilder Framework.Plugin.IEngine.Buf { get; set; }
+
+		StringBuilder Framework.Plugin.IEngine.Buf01 { get; set; }
+
 		public virtual string[] UtensilArtifactNames { get; set; }
 
 		public virtual long[] UtensilArtifactUids { get; set; }
@@ -135,6 +139,10 @@ namespace SampleAdventure.Game.Plugin
 
 		public Engine()
 		{
+			((Framework.Plugin.IEngine)this).Buf = new StringBuilder(BufSize);
+
+			((Framework.Plugin.IEngine)this).Buf01 = new StringBuilder(BufSize);
+
 			UtensilArtifactNames = new string[] { "knife", "fork", "spoon" };
 
 			UtensilArtifactUids = new long[] { 1, 2, 3 };

@@ -4,6 +4,7 @@
 // Copyright (c) 2014+ by Michael Penner.  All rights reserved.
 
 using System.Reflection;
+using System.Text;
 using Eamon;
 using static SampleAdventure.Game.Plugin.Globals;
 
@@ -11,6 +12,10 @@ namespace SampleAdventure.Game.Plugin
 {
 	public class Engine : EamonRT.Game.Plugin.Engine, Framework.Plugin.IEngine
 	{
+		StringBuilder Framework.Plugin.IEngine.Buf { get; set; }
+
+		StringBuilder Framework.Plugin.IEngine.Buf01 { get; set; }
+
 		public virtual string MuralData { get; set; }
 
 		public override RetCode LoadPluginClassMappings()
@@ -33,6 +38,10 @@ namespace SampleAdventure.Game.Plugin
 
 		public Engine()
 		{
+			((Framework.Plugin.IEngine)this).Buf = new StringBuilder(BufSize);
+
+			((Framework.Plugin.IEngine)this).Buf01 = new StringBuilder(BufSize);
+
 			// You can manually create ASCII art, find some online (with a permissive license), or use a generator like that found
 			// at https://www.ascii-art-generator.org/.  Then copy the ASCII artwork and encode it with a base-64 converter like that
 			// found at https://www.base64encode.org/.  Always use LF (Unix) line endings since this works with both Windows and Unix.

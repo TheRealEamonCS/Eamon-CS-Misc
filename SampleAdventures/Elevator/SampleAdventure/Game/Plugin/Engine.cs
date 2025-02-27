@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using Eamon;
 using Eamon.Framework.Primitive.Enums;
 using static SampleAdventure.Game.Plugin.Globals;
@@ -13,6 +14,10 @@ namespace SampleAdventure.Game.Plugin
 {
 	public class Engine : EamonRT.Game.Plugin.Engine, Framework.Plugin.IEngine
 	{
+		StringBuilder Framework.Plugin.IEngine.Buf { get; set; }
+
+		StringBuilder Framework.Plugin.IEngine.Buf01 { get; set; }
+
 		public virtual long MinElevatorRoomUid { get; set; }
 
 		public virtual long MaxElevatorRoomUid { get; set; }
@@ -71,6 +76,10 @@ namespace SampleAdventure.Game.Plugin
 
 		public Engine()
 		{
+			((Framework.Plugin.IEngine)this).Buf = new StringBuilder(BufSize);
+
+			((Framework.Plugin.IEngine)this).Buf01 = new StringBuilder(BufSize);
+
 			// Accommodate oversized Room Descs
 
 			RmDescLen = 512;
