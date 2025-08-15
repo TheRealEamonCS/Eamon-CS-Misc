@@ -13,9 +13,9 @@ namespace SampleAdventure.Game.States
 	[ClassMappings]
 	public class MonsterMemberActionState : EamonRT.Game.States.MonsterMemberActionState, IMonsterMemberActionState
 	{
-		public override void MonsterMemberMiscActionCheck02()
+		public override void MonsterMemberMiscActionCheck04()
 		{
-			// base.MonsterMemberMiscActionCheck02();
+			// base.MonsterMemberMiscActionCheck04();
 
 			var amuletArtifact = gADB[3];
 
