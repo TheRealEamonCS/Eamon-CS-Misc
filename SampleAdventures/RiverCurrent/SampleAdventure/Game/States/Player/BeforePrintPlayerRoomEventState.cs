@@ -84,6 +84,8 @@ namespace SampleAdventure.Game.States
 				x.ShowContents = false;
 
 				x.GroupCountOne = false;
+
+				x.ShowRange = false;
 			});
 
 			// Print list of Artifacts swept into player character's Room

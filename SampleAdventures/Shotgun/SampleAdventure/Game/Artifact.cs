@@ -14,11 +14,11 @@ namespace SampleAdventure.Game
 	[ClassMappings]
 	public class Artifact : Eamon.Game.Artifact, IArtifact
 	{
-		public override bool IsReadyableByMonsterUid(long monsterUid)
+		public override bool IsReadyableByMonsterUid(long monsterUid, bool includeAmmoCount = true)
 		{
 			// Only player character can wield shotgun
 
-			return Uid != 2 || monsterUid == gCharMonster.Uid ? base.IsReadyableByMonsterUid(monsterUid) : false;
+			return Uid != 2 || monsterUid == gCharMonster.Uid ? base.IsReadyableByMonsterUid(monsterUid, includeAmmoCount) : false;
 		}
 
 		public override bool ShouldAddContents(IArtifact artifact, ContainerType containerType = ContainerType.In)
